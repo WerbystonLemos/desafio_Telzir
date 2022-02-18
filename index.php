@@ -19,7 +19,7 @@
             <?php include_once('./src/components/header/index.php'); ?>
         </header>
 
-        <main id="mainContainer" class="sopraver">
+        <main id="mainContainer" class="">
             <?php include_once('./src/components/main/index.php'); ?>
         </main>
         
