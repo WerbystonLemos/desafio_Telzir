@@ -1,0 +1,44 @@
+#headerContainer
+{
+    background: rgba(61, 230, 86, 1);
+}
+
+#logomarca
+{
+    width: 10vw;
+    margin: 10px 20px;
+}
+
+#containerMenu
+{
+    margin-top: 25px;
+}
+#containerMenu > ul >li
+{
+    display: inline;
+    font-size: 15pt;
+}
+#containerMenu a
+{
+    color: white;
+}
+
+/* RESPONSIVIDADE DO HEADE */
+@media only screen and (max-width: 600px)
+{
+    #logomarca
+    {
+        width: 15vw;
+        margin: 10px 20px;
+    }
+    #containerMenu
+    {
+      display:none;
+    }
+    #logoContainer
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
