@@ -1,3 +1,7 @@
 <link rel="stylesheet" href="./src/components/footer/footer.css" />
 
-<h1>FOOTERr</h1>
+<footer id="containerFooter" class="row">
+    <div class="col-12">
+        <span>&copy;Copyright 2022 - WerbystonLemos</span>
+    </div>
+</footer>

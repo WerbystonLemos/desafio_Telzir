@@ -23,7 +23,7 @@
             <?php include_once('./src/components/main/index.php'); ?>
         </main>
         
-        <footer id="footerContainer" class="sopraver">
+        <footer id="footerContainer" class="">
             <?php include_once('./src/components/footer/index.php'); ?>
         </footer>
 

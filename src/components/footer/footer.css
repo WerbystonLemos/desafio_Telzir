@@ -1,4 +1,13 @@
-#footerContainer
+#containerFooter
 {
     background: rgba(61, 230, 86, 1);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
 }
