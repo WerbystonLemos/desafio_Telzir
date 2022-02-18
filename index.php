@@ -23,11 +23,11 @@
             <?php include_once('./src/components/main/index.php'); ?>
         </main>
         
-        <footer id="footerContainer" class="">
+        <div id="footerContainer" class="">
             <?php include_once('./src/components/footer/index.php'); ?>
-        </footer>
-
+        </div>
     </div>
+
 
     <!-- Jquery -->
     <script src="./lib/jquery/jquery.min.js"></script>

@@ -1,11 +1,11 @@
 <link href="./src/components/main/bodyMain.css" rel="stylesheet" />
 
-<div id="mainContainer" class="">
-    <div id="containerSecundary">
-        
+<div id="principalContainer" class="row">
+
+    <div id="containerSecundary" class="col-md-7 container-fluid">
         <div id="formContainer" class="col-md-7">
             <h2 id="formTitle">SIMULE</h2>
-            <div>
+            <!-- <div> -->
                 <form>
                     <div class="formInputContainer">
                         <label for="" class="formLabel">Origem:</label><br />
@@ -37,14 +37,14 @@
                         </select>
                     </div>
                 </form>
-            </div>
+            <!-- </div> -->
         </div>
         
         <div id="resultadoContainer" class="col-md-5">
-            Com Plano FaleMais<span>30</span><br/>
-            <span>R$20,00</span><br/>
-            <span>Sem o plano FaleMais30</span><br/>
-            <span>R$50,00</span><br/>
+            <span class="smallLegend">Com Plano FaleMais<span>30</span><br/></span>
+            <div id="containerBigLegend" ><span class="bigLegend">R$30</span></div>
+            <span class="smallLegend">Sem o plano FaleMais30</span><br/>
+            <span class="medioLegend">R$50,00</span><br/>
         </div>
         
     </div>
