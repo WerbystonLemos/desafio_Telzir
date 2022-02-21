@@ -3,3 +3,15 @@
     border: red 1px solid;
     height: 82vh;
 }
+
+@keyframes gira
+{
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    51% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+#containerImgLoading
+{
+    animation: gira infinite 5s;
+}

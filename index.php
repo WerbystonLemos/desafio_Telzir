@@ -21,11 +21,11 @@
             <?php include_once('./src/components/header/index.php'); ?>
         </header>
 
-        <main id="mainContainer" class="">
+        <main id="mainContainer" class="container-fluid">
             <?php include_once('./src/components/main/index.php'); ?>
         </main>
         
-        <div id="footerContainer" class="">
+        <div id="footerContainer" class="row">
             <?php include_once('./src/components/footer/index.php'); ?>
         </div>
     </div>
@@ -33,5 +33,15 @@
 
     <!-- Bootstrap -->
     <script src="./lib/bootstrap/js/bootstrap.min.js" ></script>
+    <!-- JSs proprios -->
+    <script src="./src/components/loading/loading.js"></script>
+    <script>
+        $(document).ready( () => {
+            showLoading();
+            setTimeout(() => {
+                hideLoading()   
+            }, 1500);
+        })
+    </script>
 </body>
 </html>
