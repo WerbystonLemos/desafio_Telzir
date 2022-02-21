@@ -9,39 +9,24 @@ class Plano
 
     public function getVlrPlano($origem, $destino, $tempo, $planoFaleMais)
     {
-
-        switch ( $planoFaleMais )
-        {
-            case '30':
-                echo json_encode($this->planoFaleMais30($origem, $destino, $tempo));
-            break;
-
-            case '60':
-                echo json_encode($this->planoFaleMais60($origem, $destino, $tempo));
-            break;
-
-            case '120':
-                echo json_encode($this->planoFaleMais120($origem, $destino, $tempo));
-            break;
-            
-        }
+        return json_encode($this->planoFaleMais($origem, $destino, $tempo, $planoFaleMais));
     }
 
-    public function planoFaleMais30($origem, $destino, $tempo)
+    public function planoFaleMais($origem, $destino, $tempo, $plano)
     {
         $comPlano;
         $semPlano;
 
         $tarifa = $this->getTarifa($origem, $destino);
 
-        if ( $tempo <= 30 )
+        if ( $tempo <= $plano )
         {
             $comPlano = 0;
             $semPlano = $tempo * $tarifa;
         }
         else
         {
-            $comPlano = ($tempo - 30) * $tarifa + ( 0.1 * (($tempo - 30) * $tarifa));
+            $comPlano = ($tempo - $plano) * $tarifa + ( 0.1 * (($tempo - $plano) * $tarifa));
             $semPlano = $tempo * $tarifa;
         }
 
@@ -51,70 +36,8 @@ class Plano
                 "origem"    => $origem,
                 "destino"   => $destino,
                 "tempo"     => $tempo,
-                "plano"     => 30
+                "plano"     => $plano
             ];
-
-        return $res;
-    }
-
-    public function planoFaleMais60($origem, $destino, $tempo)
-    {
-        $comPlano;
-        $semPlano;
-
-        $tarifa = $this->getTarifa($origem, $destino);
-
-        if ( $tempo <= 60 )
-        {
-            $comPlano = 0;
-            $semPlano = $tempo * $tarifa;
-        }
-        else
-        {
-            $comPlano = ($tempo - 60) * $tarifa + ( 0.1 * (($tempo - 60) * $tarifa));
-            // $comPlano = ($tempo - 60) * $tarifa;
-            $semPlano = $tempo * $tarifa;
-        }
-
-        $res = [ 
-            "comPlano"  => $comPlano,
-            "semPlano"  => $semPlano,
-            "origem"    => $origem,
-            "destino"   => $destino,
-            "tempo"     => $tempo,
-            "plano"     => 60
-        ];
-
-        return $res;
-    }
-
-    public function planoFaleMais120($origem, $destino, $tempo)
-    {
-        $comPlano;
-        $semPlano;
-
-        $tarifa = $this->getTarifa($origem, $destino);
-
-        if ( $tempo <= 120 )
-        {
-            $comPlano = 0;
-            $semPlano = $tempo * $tarifa;
-        }
-        else
-        {
-            $comPlano = ($tempo - 120) * $tarifa + ( 0.1 * (($tempo - 120) * $tarifa));
-            // $comPlano = ($tempo - 120) * $tarifa;
-            $semPlano = $tempo * $tarifa;
-        }
-
-        $res = [ 
-            "comPlano"  => $comPlano,
-            "semPlano"  => $semPlano,
-            "origem"    => $origem,
-            "destino"   => $destino,
-            "tempo"     => $tempo,
-            "plano"     => 120
-        ];
 
         return $res;
     }
