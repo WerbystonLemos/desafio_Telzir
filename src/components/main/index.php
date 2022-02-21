@@ -23,9 +23,9 @@
         </p>
         <div id="containerValores">
             <span class="smallLegend">Com Plano FaleMais<span>30</span><br/></span>
-            <div id="containerBigLegend" ><span class="bigLegend">R$30</span></div>
+            <div id="containerBigLegend"><span>R$</span><span id="sp_vlrComPlano" class="bigLegend">30</span></div>
             <span class="smallLegend">Sem o plano</span><br/>
-            <span class="medioLegend">R$50,00</span><br/>
+            RS<span id="sp_vlrSomPlano" class="medioLegend">50,00</span><br/>
         </div>
     </div>
     
@@ -58,6 +58,7 @@
 
 
 <script>
+
     $(document).ready( () => {
         carregaOrigem()
         carregaDestino()
@@ -95,6 +96,7 @@
             $("#iptOrigem").append( `<option value="${vlr}">0${vlr}</option>` )
         });
     }
+
     function carregaDestino()
     {
         let cidades = JSON.parse("<?php echo getCidades(); ?>")
@@ -115,13 +117,8 @@
     function carregaValoresPlanos(plano, origem, destino, tempo)
     {
         let res = <?php echo getVlrPlano(); ?>;
-        console.log( (res) )
-        // comPlano: 167.2
-        // destino: 11
-        // origem: 18
-        // plano: 120
-        // semPlano: 380
-        // tempo: 200
+        $("#sp_vlrComPlano").html( res.comPlano.toFixed(2))
+        $("#sp_vlrSomPlano").html( res.semPlano.toFixed(2))
     }
 
 </script>
