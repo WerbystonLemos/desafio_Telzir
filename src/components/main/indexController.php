@@ -2,8 +2,6 @@
 require("./app/Plano.php");
 require("./app/Cidade.php");
 
-$plano      = new Plano();
-
 function getVlrComPlano(){}
 function getVlrSomPlano(){}
 
@@ -21,4 +19,14 @@ function getCidades()
     }
 
     return json_encode($codCidades);
+}
+
+/**
+ * retorna os planos existentes 
+ * ate o momento
+ */
+function  getPlanos()
+{
+    $plano = new Plano();
+    return json_encode( $plano->getPlanos() );
 }

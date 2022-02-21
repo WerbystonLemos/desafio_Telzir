@@ -6,7 +6,7 @@ class Plano
     private $destino;
     private $tempo;
     private $tipoPlano;
-    
+
     /*
     public construct($origem, $destino, $tempo, $tipoPlano)
     {
@@ -23,5 +23,10 @@ class Plano
     }
 
     // public function getVlrComPlano(){};
+
+    public function getPlanos()
+    {
+        return [30,60,120];
+    }
 
 }

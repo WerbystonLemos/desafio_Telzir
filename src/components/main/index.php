@@ -26,12 +26,8 @@
                     </div>
 
                     <div class="formInputContainer">
-                        <label for="" class="formLabel">Plano:</label><br />
-                        <select name="" id="iptPlano" onchange="calcula()">
-                            <option value="FL30">FaleMais30</option>
-                            <option value="FL60">FaleMais60</option>
-                            <option value="FL120">FaleMais120</option>
-                        </select>
+                        <label for="iptPlano" class="formLabel">Plano:</label><br />
+                        <select id="iptPlano" onchange="calcula()"></select>
                     </div>
                 </form>
         </div>
@@ -51,6 +47,7 @@
     $(document).ready( () => {
         carregaOrigem()
         carregaDestino()
+        getPlanos()
     })
 
     function calcula()
@@ -86,4 +83,14 @@
             $("#iptDestino").append( `<option value="${vlr}">0${vlr}</option>` )
         });
     }
+
+    function getPlanos()
+    {
+        let planos = "<?php echo getPlanos() ?>";
+        planos = JSON.parse(planos)
+        planos.forEach( elemento => {
+            $("#iptPlano").append( `<option value="FL${elemento}">FaleMais${elemento}</option>` )
+        })
+    }
+
 </script>
