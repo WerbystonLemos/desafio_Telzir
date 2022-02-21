@@ -4,44 +4,58 @@
 
 <link href="./src/components/main/bodyMain.css" rel="stylesheet" />
     
-<div id="principalContainer" class="row">
         
-    <div id="containerSecundary" class="col-md-7 container-fluid">
-        <div id="formContainer" class="col-md-7">
-            <h2 id="formTitle">SIMULE</h2>
-                <form>
-                    <div class="formInputContainer">
-                        <label for="iptOrigem" class="formLabel">Origem:</label><br />
-                        <select id="iptOrigem" onchange="calcula()"></select>
-                    </div>
-                    
-                    <div class="formInputContainer">
-                        <label for="iptDestino" class="formLabel">Destino:</label><br />
-                        <select id="iptDestino" onchange="calcula()"></select>
-                    </div>
+<div id="containerSecundary" class="">
 
-                    <div class="formInputContainer">
-                        <label for="inptMinutos" class="formLabel">Tempo <sup>(min)</sup>:</label><br />
-                        <input type="number" min="1" id="inptMinutos" onchange="calcula()">
-                    </div>
-
-                    <div class="formInputContainer">
-                        <label for="iptPlano" class="formLabel">Plano:</label><br />
-                        <select id="iptPlano" onchange="calcula()"></select>
-                    </div>
-                </form>
-        </div>
-        
-        <div id="resultadoContainer" class="col-md-5">
+    <div class="col-md-4"></div>
+    
+    <div id="resultadoContainer" class="col-md-4">
+        <p id="txt_secao1">
+            <span id="txt_conheca">Conheça o </span><br/>
+            <b id="txt_faleMais">FaleMais</b>!
+        </p>
+        <p id="txt_secao2">
+            Escolha seu plano FaleMais e fale de
+            <b>GRAÇA</b> até um determinado tempo,
+            pague apenas os minutos excedentes
+            com acréscimo de 10% sobre
+            a tarifa do minuto.
+        </p>
+        <div id="containerValores">
             <span class="smallLegend">Com Plano FaleMais<span>30</span><br/></span>
             <div id="containerBigLegend" ><span class="bigLegend">R$30</span></div>
-            <span class="smallLegend">Sem o plano FaleMais30</span><br/>
+            <span class="smallLegend">Sem o plano</span><br/>
             <span class="medioLegend">R$50,00</span><br/>
         </div>
-        
     </div>
+    
+    <div id="formContainer" class="col-md-4">
+        <h2 id="formTitle">SIMULE</h2>
+        <form>
+            <div class="formInputContainer">
+                <label for="iptOrigem" class="formLabel">Origem:</label><br />
+                <select id="iptOrigem" onchange="calcula()"></select>
+            </div>
+            
+            <div class="formInputContainer">
+                <label for="iptDestino" class="formLabel">Destino:</label><br />
+                <select id="iptDestino" onchange="calcula()"></select>
+            </div>
 
+            <div class="formInputContainer">
+                <label for="inptMinutos" class="formLabel">Tempo <sup>(min)</sup>:</label><br />
+                <input type="number" min="1" id="inptMinutos" onchange="calcula()">
+            </div>
+
+            <div class="formInputContainer">
+                <label for="iptPlano" class="formLabel">Plano:</label><br />
+                <select id="iptPlano" onchange="calcula()"></select>
+            </div>
+        </form>
+    </div>
+    
 </div>
+
 
 <script>
     $(document).ready( () => {
@@ -66,11 +80,11 @@
             carregaValoresPlanos(plano, origem, destino, tempo)
             
             // Mostra container do resultado
-            $("#resultadoContainer").show("slow");
+            $("#containerValores").show("slow");
         }
         else
         {
-            $("#resultadoContainer").hide("slow");
+            $("#containerValores").hide("slow");
         }
     }
 

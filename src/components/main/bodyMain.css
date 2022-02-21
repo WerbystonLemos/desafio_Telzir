@@ -1,8 +1,20 @@
-#principalContainer
+#mainContainer
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url('./../../img/bg_dkt.png') !important;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 991px)
+{
+    #mainContainer
+    {
+        background-image: url('./../../img/bg_mob.png') !important;
+        background-repeat: no-repeat;
+        background-position: 0%;
+        background-size: cover;
+    }
 }
 
 #containerSecundary
@@ -13,22 +25,24 @@
 
 #formContainer
 {
-    background: #A3FFAF;
-    padding: 10px 10px 75px 10px;
+    padding: 80px 30px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50px;
 }
 
 #formTitle
 {
     text-align: center;
     font-weight: bold;
+    font-size: 300%;
     letter-spacing: 2px;
-    color: rgb(61,230,86);
+    color: rgb( 20, 28, 80);
     height: 100%;
 }
 
 .formLabel
 {
-    color: rgb(61,230,86);
+    color: rgb( 20, 28, 80);
 }
 
 .formInputContainer
@@ -38,19 +52,41 @@
 
 input, select
 {
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 10px 4px;
-    border-color: rgb(61,230,86);
+    border-color: rgb( 20, 28, 80);
     border-top: none;
     border-right: none;
-    color: rgb(61,230,86);
+    color: rgb( 20, 28, 80);
     width: 100%;
 }
 
+/* container resultado */
+#txt_secao1
+{
+    line-height: 50px;
+}
+#txt_conheca
+{
+    font-size: 300%;
+}
+#txt_faleMais
+{
+    font-size: 500%;
+}
+#txt_secao2
+{
+    font-size: 120%;
+}
 #resultadoContainer
 {
-    background: #41FF5A;
-    padding: 80px 20px;
+    padding: 40px 20px;
+    color: rgb( 20, 28, 80);
+    /* display: none; */
+}
+
+#containerValores
+{
     display: none;
 }
 
@@ -62,7 +98,7 @@ input, select
 {
     font-size: 120px;
     font-weight: bolder;
-    color: green;
+    color: rgb( 20, 28, 80);
     animation: deCresce infinite 1.5s;
 }
 @keyframes deCresce
@@ -74,10 +110,14 @@ input, select
 .smallLegend
 {
     font-size: 20px;
+    font-weight: bolder;
+    background:rgb( 44, 116, 235 );
+    padding: 5px 10px;
+    border-radius: 100px;
 }
 .medioLegend
 {
     font-size: 80px;
     font-weight: bolder;
-    color: rgba(0,0,0, 0.2);
+    color: rgb( 20, 28, 80);
 }
