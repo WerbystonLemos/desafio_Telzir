@@ -22,7 +22,7 @@
             a tarifa do minuto.
         </p>
         <div id="containerValores">
-            <span class="smallLegend">Com Plano FaleMais<span>30</span><br/></span>
+            <span class="smallLegend">Com Plano FaleMais<span id="sp_vlrPlano"></span><br/></span>
             <div id="containerBigLegend"><span>R$</span><span id="sp_vlrComPlano" class="bigLegend">30</span></div>
             <span class="smallLegend">Sem o plano</span><br/>
             RS<span id="sp_vlrSomPlano" class="medioLegend">50,00</span><br/>
@@ -119,6 +119,7 @@
         let res = <?php echo getVlrPlano(); ?>;
         $("#sp_vlrComPlano").html( res.comPlano.toFixed(2))
         $("#sp_vlrSomPlano").html( res.semPlano.toFixed(2))
+        $("#sp_vlrPlano").html( res.plano )
     }
 
 </script>
