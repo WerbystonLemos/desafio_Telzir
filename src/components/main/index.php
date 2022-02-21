@@ -57,15 +57,20 @@
         let tempo   = $("#inptMinutos").val()
         let plano   = $("#iptPlano").val()
 
-        if( origem  != "" || origem  != null || origem  != undefined ||
-            destino != "" || destino != null || destino != undefined ||
-            tempo   != "" || tempo   != null || tempo   != undefined ||
-            plano   != "" || plano   != null || plano   != undefined)
+        if( origem  != "" && origem  != null && origem  != undefined &&
+            destino != "" && destino != null && destino != undefined &&
+            tempo   != "" && tempo   != null && tempo   != undefined &&
+            plano   != "" && plano   != null && plano   != undefined)
         {
-            // Calcula
+            // calcula valores
+            carregaValoresPlanos(plano, origem, destino, tempo)
             
             // Mostra container do resultado
             $("#resultadoContainer").show("slow");
+        }
+        else
+        {
+            $("#resultadoContainer").hide("slow");
         }
     }
 
@@ -91,6 +96,18 @@
         planos.forEach( elemento => {
             $("#iptPlano").append( `<option value="FL${elemento}">FaleMais${elemento}</option>` )
         })
+    }
+
+    function carregaValoresPlanos(plano, origem, destino, tempo)
+    {
+        let res = <?php echo getVlrPlano(); ?>;
+        console.log( (res) )
+        // comPlano: 167.2
+        // destino: 11
+        // origem: 18
+        // plano: 120
+        // semPlano: 380
+        // tempo: 200
     }
 
 </script>

@@ -1,9 +1,9 @@
 <?php
-require("./app/Plano.php");
-require("./app/Cidade.php");
 
-function getVlrComPlano(){}
-function getVlrSomPlano(){}
+require("./app/Plano.php");
+// require("./../../../app/Plano.php");
+require("./app/Cidade.php");
+// require("./../../../app/Cidade.php");
 
 /**
  * retorna os cod das cidades em promocao
@@ -29,4 +29,14 @@ function  getPlanos()
 {
     $plano = new Plano();
     return json_encode( $plano->getPlanos() );
+}
+
+/**
+ * retorna o valor do plano
+ */
+function getVlrPlano($plano = 18, $origem = 11, $destino = 200, $tempo = 120)
+{
+    $planoFaleMais = new Plano();
+    $res = $planoFaleMais->getVlrPlano($plano, $origem, $destino, $tempo);
+    return $res ;
 }
