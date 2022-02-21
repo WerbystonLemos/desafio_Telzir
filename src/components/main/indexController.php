@@ -1,9 +1,7 @@
 <?php
 
 require("./app/Plano.php");
-// require("./../../../app/Plano.php");
 require("./app/Cidade.php");
-// require("./../../../app/Cidade.php");
 
 /**
  * retorna os cod das cidades em promocao
