@@ -51,6 +51,7 @@ input, select
 {
     background: #41FF5A;
     padding: 80px 20px;
+    display: none;
 }
 
 #containerBigLegend

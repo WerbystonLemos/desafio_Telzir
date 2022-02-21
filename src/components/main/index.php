@@ -1,43 +1,39 @@
+<?php
+    require("./src/components/main/indexController.php"); 
+?>
+
 <link href="./src/components/main/bodyMain.css" rel="stylesheet" />
-
+    
 <div id="principalContainer" class="row">
-
+        
     <div id="containerSecundary" class="col-md-7 container-fluid">
         <div id="formContainer" class="col-md-7">
             <h2 id="formTitle">SIMULE</h2>
-            <!-- <div> -->
                 <form>
                     <div class="formInputContainer">
-                        <label for="" class="formLabel">Origem:</label><br />
-                        <select name="" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
+                        <label for="iptOrigem" class="formLabel">Origem:</label><br />
+                        <select id="iptOrigem" onchange="calcula()"></select>
+                    </div>
+                    
+                    <div class="formInputContainer">
+                        <label for="iptDestino" class="formLabel">Destino:</label><br />
+                        <select id="iptDestino" onchange="calcula()"></select>
                     </div>
 
                     <div class="formInputContainer">
-                        <label for="" class="formLabel">Destino:</label><br />
-                        <select name="" id="">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
-
-                    <div class="formInputContainer">
-                        <label for="" class="formLabel">Tempo <sup>(min)</sup>:</label><br />
-                        <input type="number">
+                        <label for="inptMinutos" class="formLabel">Tempo <sup>(min)</sup>:</label><br />
+                        <input type="number" min="1" id="inptMinutos" onchange="calcula()">
                     </div>
 
                     <div class="formInputContainer">
                         <label for="" class="formLabel">Plano:</label><br />
-                        <select name="" id="">
+                        <select name="" id="iptPlano" onchange="calcula()">
                             <option value="FL30">FaleMais30</option>
                             <option value="FL60">FaleMais60</option>
                             <option value="FL120">FaleMais120</option>
                         </select>
                     </div>
                 </form>
-            <!-- </div> -->
         </div>
         
         <div id="resultadoContainer" class="col-md-5">
@@ -50,3 +46,44 @@
     </div>
 
 </div>
+
+<script>
+    $(document).ready( () => {
+        carregaOrigem()
+        carregaDestino()
+    })
+
+    function calcula()
+    {
+        let origem  = $("#iptOrigem").val()
+        let destino = $("#iptDestino").val()
+        let tempo   = $("#inptMinutos").val()
+        let plano   = $("#iptPlano").val()
+
+        if( origem  != "" || origem  != null || origem  != undefined ||
+            destino != "" || destino != null || destino != undefined ||
+            tempo   != "" || tempo   != null || tempo   != undefined ||
+            plano   != "" || plano   != null || plano   != undefined)
+        {
+            // Calcula
+            
+            // Mostra container do resultado
+            $("#resultadoContainer").show("slow");
+        }
+    }
+
+    function carregaOrigem()
+    {
+        let cidades = JSON.parse("<?php echo getCidades(); ?>")
+        cidades.forEach( vlr => {
+            $("#iptOrigem").append( `<option value="${vlr}">0${vlr}</option>` )
+        });
+    }
+    function carregaDestino()
+    {
+        let cidades = JSON.parse("<?php echo getCidades(); ?>")
+        cidades.forEach( vlr => {
+            $("#iptDestino").append( `<option value="${vlr}">0${vlr}</option>` )
+        });
+    }
+</script>

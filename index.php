@@ -10,6 +10,8 @@
     <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- css  -->
     <link href="./src/css/main.css" rel="stylesheet" />
+    <!-- Jquery -->
+    <script src="./lib/jquery/jquery.min.js"></script>
 </head>
 <body>
 
@@ -29,8 +31,6 @@
     </div>
 
 
-    <!-- Jquery -->
-    <script src="./lib/jquery/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="./lib/bootstrap/js/bootstrap.min.js" ></script>
 </body>
